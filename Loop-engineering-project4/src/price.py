@@ -13,5 +13,5 @@ def final_price(base_price, discount_percent, tax_percent):
     """
     discount = base_price * discount_percent / 100
     discounted = base_price - discount
-    tax = base_price * tax_percent / 100  # BUG: should be discounted
+    tax = discounted * tax_percent / 100
     return discounted + tax
