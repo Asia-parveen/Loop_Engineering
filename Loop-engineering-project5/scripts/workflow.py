@@ -9,15 +9,22 @@ REVIEW_DIR = os.path.join(PROJECT_ROOT, "review")
 def run_job(issue_id):
     issue_name = f"issue{issue_id}"
     worktree_path = os.path.join(REVIEW_DIR, issue_name)
+    branch_name = f"branch_{issue_name}"
     
-    # Clean up existing worktree
+    # Clean up existing worktree first (remove registration and directory)
     if os.path.exists(worktree_path):
-        subprocess.run(["git", "worktree", "remove", "-f", worktree_path], cwd=PROJECT_ROOT)
-        if os.path.exists(worktree_path):
-            shutil.rmtree(worktree_path)
+        subprocess.run(["git", "worktree", "remove", "-f", worktree_path], cwd=PROJECT_ROOT, capture_output=True, text=True)
+    
+    # Remove the worktree directory if it still exists
+    import shutil
+    if os.path.exists(worktree_path):
+        shutil.rmtree(worktree_path)
+    
+    # Now safely delete the branch (may fail if it doesn't exist, which is fine)
+    subprocess.run(["git", "branch", "-D", branch_name], cwd=PROJECT_ROOT, capture_output=True, text=True)
 
-    # Create isolated worktree
-    subprocess.run(["git", "worktree", "add", "-b", f"branch_{issue_name}", worktree_path, "master"], cwd=PROJECT_ROOT, check=True)
+    # Create isolated worktree from master
+    subprocess.run(["git", "worktree", "add", "-b", branch_name, worktree_path, "master"], cwd=PROJECT_ROOT, check=True)
     
     # Run Maker
     maker_proc = subprocess.run([sys.executable, os.path.join(PROJECT_ROOT, "scripts", "maker.py"), issue_name, worktree_path], capture_output=True, text=True)
