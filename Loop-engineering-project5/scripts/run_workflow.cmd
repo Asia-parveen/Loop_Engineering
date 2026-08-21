@@ -1,0 +1,3 @@
+@echo off
+echo Running Project 5 Workflow...
+REM Future workflow implementation goes here.
