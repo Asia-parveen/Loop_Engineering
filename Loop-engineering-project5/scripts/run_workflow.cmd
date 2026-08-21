@@ -1,3 +1,3 @@
 @echo off
-echo Running Project 5 Workflow...
-REM Future workflow implementation goes here.
+set PYTHONPATH=%~dp0..
+python %~dp0workflow.py
