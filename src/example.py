@@ -1,6 +1,6 @@
 def add(a: int, b: int) -> int:
-    """Return the sum of two integers (off-by-one bug: returns a+b+1)."""
-    return a + b + 1
+    """Return the sum of two integers."""
+    return a + b
 
 
 def greet(name: str) -> str:
