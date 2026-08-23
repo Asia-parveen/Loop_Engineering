@@ -1,3 +1,0 @@
-Preparing worktree (new branch 'branch_issue2')
-HEAD is now at b436ef0 Add __init__.py files for test imports
-Candidate 2: PASS
