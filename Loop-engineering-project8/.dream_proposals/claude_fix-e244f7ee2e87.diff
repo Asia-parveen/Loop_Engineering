@@ -1,0 +1,15 @@
+--- a/src/connector.py
++++ b/src/connector.py
+@@ -74,7 +74,10 @@ def create_branch(repo_root: Path, branch_name: str, base_branch: Optional[str] = None) -> bool:
+     """Create a new branch from base_branch."""
+     if base_branch is None:
+         base_branch = get_default_branch(repo_root)
+-    # Fetch latest
++    # Fetch latest (with fallback if origin/HEAD not set)
+     run_git(repo_root, "fetch", "origin", base_branch)
+-    # Create branch
++    # Create branch - try with origin/base, fallback to local base
++    result = run_git(repo_root, "checkout", "-b", branch_name, f"origin/{base_branch}")
++    if result.returncode != 0:
++        result = run_git(repo_root, "checkout", "-b", branch_name, base_branch)
+     return result.returncode == 0
