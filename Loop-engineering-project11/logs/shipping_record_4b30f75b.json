@@ -1,0 +1,9 @@
+{
+  "routine_b_run_id": "4b30f75b",
+  "draft_branch": "claude/my-draft",
+  "draft_summary_hash": "79db36ddb1c2",
+  "action": "human_approved_ship",
+  "timestamp": "2026-08-29T02:30:34.422672",
+  "status": "shipped",
+  "note": "Shipped via human API trigger - NEEDS HUMAN for final merge/review"
+}

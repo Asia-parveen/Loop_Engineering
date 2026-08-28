@@ -1,0 +1,54 @@
+{
+  "routine_a_runs": [
+    {
+      "run_id": "fb31b845",
+      "branch_name": "claude/perm-test",
+      "summary_hash": "401eb309c156",
+      "commit_count": 3,
+      "created_at": "2026-08-29T02:22:13.109531",
+      "status": "ready_for_review",
+      "log_file": "logs/routine_a_fb31b845.log"
+    },
+    {
+      "run_id": "2bc6e236",
+      "branch_name": "claude/my-draft",
+      "summary_hash": "79db36ddb1c2",
+      "commit_count": 3,
+      "created_at": "2026-08-29T02:26:31.491267",
+      "status": "ready_for_review",
+      "log_file": "logs/routine_a_2bc6e236.log"
+    }
+  ],
+  "routine_b_runs": [
+    {
+      "run_id": "4b30f75b",
+      "draft_branch": "claude/my-draft",
+      "action_result": {
+        "action": "review_and_ship",
+        "draft_branch": "claude/my-draft",
+        "summary_hash": "79db36ddb1c2",
+        "executed_at": "2026-08-29T02:30:33.085639",
+        "executed_by": "human_api_trigger",
+        "details": [
+          "Branch 'claude/my-draft' exists on remote"
+        ],
+        "shipping_record": "logs\\shipping_record_4b30f75b.json"
+      },
+      "created_at": "2026-08-29T02:30:34.423339",
+      "status": "success",
+      "log_file": "logs/routine_b_4b30f75b.log"
+    }
+  ],
+  "current_draft": {
+    "run_id": "2bc6e236",
+    "branch_name": "claude/my-draft",
+    "summary_hash": "79db36ddb1c2",
+    "commit_count": 3,
+    "created_at": "2026-08-29T02:26:31.491267",
+    "status": "shipped_by_routine_b",
+    "log_file": "logs/routine_a_2bc6e236.log",
+    "shipped_at": "2026-08-29T02:30:34.423336",
+    "shipped_by_run": "4b30f75b"
+  },
+  "human_gate_status": "completed"
+}

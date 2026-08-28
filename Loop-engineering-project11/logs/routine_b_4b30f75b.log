@@ -1,0 +1,10 @@
+[2026-08-29T02:30:33.031951] [INFO] Starting Routine B run: 4b30f75b
+[2026-08-29T02:30:33.031985] [INFO] Trigger data: {'approved_by': 'Asia'}
+[2026-08-29T02:30:33.085618] [SUCCESS] Human gate passed: Draft is ready for review.
+[2026-08-29T02:30:33.085634] [INFO] Executing Routine B action for draft: claude/my-draft
+[2026-08-29T02:30:33.085637] [INFO] Draft summary hash: 79db36ddb1c2
+[2026-08-29T02:30:34.422662] [INFO] Branch 'claude/my-draft' exists on remote
+[2026-08-29T02:30:34.423313] [INFO] Shipping record created: logs\shipping_record_4b30f75b.json
+[2026-08-29T02:30:34.423324] [SUCCESS] Routine B action executed successfully
+[2026-08-29T02:30:34.423882] [INFO] State updated. Human gate completed.
+[2026-08-29T02:30:34.423888] [SUCCESS] Routine B completed successfully

@@ -1,0 +1,10 @@
+[2026-08-29T02:26:24.655897] [INFO] Starting Routine A run: 2bc6e236
+[2026-08-29T02:26:24.655929] [INFO] Parameters: since=None, branch_suffix=my-draft
+[2026-08-29T02:26:24.665302] [INFO] Target branch: claude/my-draft
+[2026-08-29T02:26:24.771410] [INFO] Found 3 commit(s)
+[2026-08-29T02:26:24.771522] [INFO] Summary created (hash: 79db36ddb1c2)
+[2026-08-29T02:26:24.771524] [INFO] Creating/updating branch: claude/my-draft
+[2026-08-29T02:26:31.491254] [SUCCESS] Branch claude/my-draft created/updated successfully
+[2026-08-29T02:26:31.492056] [INFO] State saved. Draft ready for human review.
+[2026-08-29T02:26:31.492069] [INFO] Routine A completed. Routine B NOT triggered automatically.
+[2026-08-29T02:26:31.492072] [SUCCESS] Routine A completed successfully
